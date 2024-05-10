@@ -1,4 +1,4 @@
-Estructuras, segunda parte
+# Estructuras, segunda parte
 
 Como has visto, las estructuras nos permiten combinar piezas de datos individuales para hacer algo nuevo, y luego adjuntar métodos para que podamos manipular esos datos.
 
@@ -119,7 +119,7 @@ Si lo piensas, el control de acceso se trata realmente de limitar lo que tú y o
 Importante: Si utiliza el control de acceso private para una o más propiedades, lo más probable es que tenga que crear su propio inicializador.
 
 
-¿Cuál es el punto del control de acceso?
+### ¿Cuál es el punto del control de acceso?
 
 Las palabras clave de control de acceso de Swift nos permiten restringir la forma en que se puede acceder a diferentes partes de nuestro código, pero la mayor parte del tiempo es solo obedecer las reglas que pusimos en marcha: podríamos eliminarlas si quisiéramos y eludir las restricciones, así que ¿cuál es el punto?
 
@@ -148,7 +148,7 @@ El control de acceso puede ser un problema bastante espinoso, especialmente cuan
 
 
 
-Propiedades y métodos estáticos
+# Propiedades y métodos estáticos
 
 
 Has visto cómo podemos adjuntar propiedades y métodos a las estructuras, y cómo cada estructura tiene su propia copia única de esas propiedades para que llamar a un método en la estructura no lea las propiedades de una estructura diferente del mismo tipo.
@@ -157,6 +157,7 @@ Bueno, a veces, solo a veces, quieres añadir una propiedad o un método a la es
 
 En primer lugar, echemos un vistazo a un ejemplo simplificado de cómo crear y usar propiedades y
 /// Ejemplo de  usar  propiedades y métodos estáticos
+
 struct School {
     static var studentCount = 0
     
@@ -164,7 +165,10 @@ struct School {
         print ("\(student) Se unió a la escuela.")
         studentCount += 1
     }
-} métodos estáticos:
+} 
+
+métodos estáticos:
+
 
 
 
@@ -302,7 +306,7 @@ Pronto buscaremos más control de acceso.
 
 
 
-Resumen: Estructuras
+# Resumen: Estructuras
 
 Las estructuras se utilizan en casi todas partes en Swift: String, Int, Double, Array e incluso Bool se implementan como estructuras, y ahora puedes reconocer que una función como isMultiple(of:) es realmente un método que pertenece a Int.
 
@@ -327,7 +331,7 @@ Podemos usar el acceso para marcar cualquier propiedad y método como disponible
 Es posible adjuntar una propiedad o métodos directamente a una estructura, para que pueda usarlos sin crear una instancia de la estructura.
 
 
-Punto de control 6
+# Punto de control 6
 
 
 Las estructuras se encuentran en el núcleo de cada aplicación SwiftUI, por lo que es muy importante que te tomes un tiempo extra para asegurarte de entender lo que hacen y cómo funcionan.
@@ -335,3 +339,56 @@ Las estructuras se encuentran en el núcleo de cada aplicación SwiftUI, por lo 
 Para comprobar sus conocimientos, aquí hay una pequeña tarea para usted: cree una estructura para almacenar información sobre un coche, incluido su modelo, el número de asientos y el equipo actual, y luego agregue un método para cambiar los engranajes hacia arriba o hacia abajo. Piensa en las variables y el control de acceso: ¿qué datos deben ser una variable en lugar de una constante, y qué datos deben exponerse públicamente? ¿Debería el método de cambio de marchas validar su entrada de alguna manera?
 
 Como siempre, escribiré algunas pistas a continuación, pero primero voy a dejar algo de espacio para que no veas las pistas por accidente. Como siempre, es una muy buena idea probar este desafío usted mismo antes de mirar las pistas: es la forma más rápida de identificar las partes con las que te sientes menos seguro.
+
+
+
+Solucion ....
+
+
+ struct Coche {
+
+    static let marca = "Citroen"
+    let modelo: String
+    let numeroAsientos: Int
+    
+    private var cambioMarcha: Int = 0
+    
+    init(modelo: String, numeroAsientos: Int = 5, cambioMarcha: Int ) {
+        self.modelo = modelo
+        self.numeroAsientos = numeroAsientos
+      
+    }
+
+    // Cambio de marcha ascendente
+    mutating func marchaAscendete(){
+        if cambioMarcha < 6 {
+            cambioMarcha += 1
+            print("camvio de marcha \(cambioMarcha)")
+        }else{
+            print("esta enmarcha")
+        }
+    }
+    
+    // Cambio de marcha descendente
+    mutating func marchaDesdecndente(){
+        if cambioMarcha > 0 {
+            cambioMarcha -= 1
+            print("camvio de marcha \(cambioMarcha)")
+        }else{
+            print("camvio de marcha \(cambioMarcha)")
+        }
+    }
+    
+    // obtener la macha actual
+    func marchaActual() -> Int {
+        return cambioMarcha
+    }
+    
+}
+
+
+
+
+
+
+
