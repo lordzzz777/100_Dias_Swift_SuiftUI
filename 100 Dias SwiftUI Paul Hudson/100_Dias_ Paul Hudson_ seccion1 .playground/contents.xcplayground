@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='5.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
-    <timeline fileName='timeline.xctimeline'/>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='Resumen Dia 1 y 2, Primeros pasos en Swift, Tipos de datos simples'/>
+        <page name=' Resumen Dia 3 y 4, Tipos de datos complejos'/>
+        <page name='Resumen Día 5  Condicionales'/>
+        <page name='Resumen Dia 6 Bucles'/>
+        <page name='Resumen Dia 7 y 8 Funciones'/>
+        <page name='Resumen Dia 9 closure'/>
+        <page name='Resumen Dia 10 y 11 Estructuras'/>
+        <page name='Resumen Dia 12 Clases'/>
+    </pages>
 </playground>
