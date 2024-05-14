@@ -50,9 +50,10 @@ let message = "¡Hola, mundo!"
 // Utilización de la función 'uppercased()' en una cadena
 let uppercaseMessage = message.uppercased()
 
+
+var playerName = "Javier"
+var playerScore = 150
 // Utilización de la interpolación de cadenas para incluir variables
-let playerName = "Javier"
-let playerScore = 150
 let finalMessage = "El jugador \(playerName) ha obtenido \(playerScore) puntos."
 
 // Creación de una variable booleana y uso del operador '!'
