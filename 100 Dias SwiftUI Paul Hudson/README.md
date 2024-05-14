@@ -30,5 +30,9 @@
 ## Dia 12, Clases
 - Resumen de lo impartido, sobre las clases
 - Reto nº 7
-
-
+## Dia 13, Protocolos y extensiones
+- Resumen Dia 13 Protocolos y extensiones
+- Reto nº 8
+## Dia 14, Opcionales
+- Resumen Dia 14 Opcionales
+- Reto nº 9
