@@ -2,34 +2,12 @@ import Foundation
 
 // MARK: - Dia 10 y 11, Structuras
 
-/// Los structs se utilizan casi en todas partes en Swift: String, Int, Double, Array e incluso Bool están todos implementados como structs, y ahora puedes reconocer que una función como isMultiple(of:) es realmente un método perteneciente a Int.
-
-/// Repasemos qué más aprendimos:
-
-/// Puedes crear tus propios structs escribiendo struct, dándole un nombre y luego colocando el código del struct dentro de llaves.
-
-/// Los structs pueden tener variables y constantes (conocidas como propiedades) y funciones (conocidas como métodos).
-
-/// Si un método intenta modificar propiedades de su struct, debes marcarlo como mutating.
-
-/// Puedes almacenar propiedades en memoria, o crear propiedades calculadas que calculan un valor cada vez que se acceden.
-
-/// Podemos adjuntar observadores de propiedades didSet y willSet a propiedades dentro de un struct, lo cual es útil cuando necesitamos asegurarnos de que algún código siempre se ejecute cuando la propiedad cambia.
-
-/// Los inicializadores son un poco como funciones especializadas, y Swift genera uno para todos los structs utilizando los nombres de sus propiedades.
-
-/// Puedes crear tus propios inicializadores personalizados si quieres, pero siempre debes asegurarte de que todas las propiedades en tu struct tengan un valor para cuando el inicializador termine, y antes de llamar a cualquier otro método.
-
-/// Podemos usar access para marcar cualquier propiedad y método como disponible o no disponible externamente, según sea necesario.
-
-/// Es posible adjuntar una propiedad o métodos directamente a un struct, para que puedas usarlos sin crear una instancia del struct.
-
-// Ejemplo de código:
-
+// Estructura que contine dos variable y una funcion 
 struct Rectangulo {
-    var ancho: Double
-    var altura: Double
+    var ancho: Double // variable de tipo decimal que hace alusión al ancho
+    var altura: Double // variable de tipo decimal que hace alusión al largo
     
+    // funcion que calcula el area de dicha figura 
     func area() -> Double {
         return ancho * altura
     }

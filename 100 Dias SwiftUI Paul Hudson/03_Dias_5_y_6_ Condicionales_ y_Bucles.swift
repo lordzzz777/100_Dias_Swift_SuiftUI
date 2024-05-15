@@ -1,24 +1,38 @@
 import Foundation
 
+// MARK: - Día 5 Condicionales
+
+
+// constante de tipoo entero, implicita
+let edadPerson = 25
+
+// se impone la condición
+if edadPerson >= 18 {
+    print("Eres mayor de edad")// si es mayor entra en este bloque
+} else {
+    print("Eres menor de edad")// si es menor enttrarai en este bloque 
+}
+
+
+//los condicinales ternarios 
+edadPerson >= 18 ? print("Eres mayor de edad") : print("Eres menor de edad")
+
+
+// contate de cadena de texto 
+let diaSemana = "viernes"
+
+// se evalua en cada caso la contate proporcinada 
+switch diaSemana {
+case "lunes":
+    print("Es el primer día de la semana") 
+case "viernes":
+    print("¡Por fin es viernes!")
+default:
+    print("Es un día de la semana")
+}
+
+
 // MARK: - Día 6 Bucles
-
-/// Usamos declaraciones if para verificar si una condición es verdadera. Puedes pasar cualquier condición que desees, pero en última instancia debe reducirse a un booleano.
-
-/// Si lo deseas, puedes agregar un bloque else, y/o múltiples bloques else if para verificar otras condiciones. Swift ejecuta estos en orden.
-
-/// Puedes combinar condiciones usando ||, lo que significa que toda la condición es verdadera si cualquiera de las subcondiciones es verdadera, o &&, lo que significa que toda la condición es verdadera si ambas subcondiciones son verdaderas.
-
-/// Si estás repitiendo los mismos tipos de comprobación muchas veces, puedes usar una declaración switch en su lugar. Estas siempre deben ser exhaustivas, lo que podría significar agregar un caso predeterminado.
-
-/// Si uno de tus casos de switch utiliza fallthrough, significa que Swift ejecutará el siguiente caso después. Esto no se usa comúnmente.
-/// El operador ternario condicional nos permite verificar WTF: What, True, False. Aunque puede ser un poco difícil de leer al principio, verás que se usa mucho en SwiftUI.
-
-/// Los bucles for nos permiten recorrer arrays, sets, diccionarios y rangos. Puedes asignar elementos a una variable de bucle y usarla dentro del bucle, o puedes usar guión bajo, _, para ignorar la variable de bucle.
-/// Los bucles while nos permiten crear bucles personalizados que continuarán ejecutándose hasta que una condición se vuelva falsa.
-
-/// Podemos saltar algunos o todos los elementos del bucle usando continue o break respectivamente.
-
-/// Eso es otro gran bloque de nuevo material, pero con condiciones y bucles ahora sabes lo suficiente como para construir software realmente útil. ¡Inténtalo!
 
 
 // Declaraciones "if", "else" y "else if":
@@ -47,6 +61,7 @@ if temperaturas >= 20 && temperaturas <= 30 {
 // Declaración switch:
 let dia_Semana = "lunes"
 
+// se evalua en cada caso la contate proporcinada 
 switch dia_Semana {
 case "lunes", "martes", "miércoles", "jueves", "viernes":
     print("Es un día laboral.")
@@ -99,8 +114,9 @@ while contador < 5 {
 
 /// Ya sabes todo lo que necesitas para resolver ese problema, pero si deseas algunas pistas, añadiré algunas a continuación.
 
+// se itera en un bucle for del 1 al 100
 for numero in 1...100 {
-    if numero % 3 == 0 && numero % 5 == 0 {
+    if numero % 3 == 0 && numero % 5 == 0 { 
         print("FizzBuzz")
     } else if numero % 3 == 0 {
         print("Fizz")
@@ -110,4 +126,3 @@ for numero in 1...100 {
         print(numero)
     }
 }
-

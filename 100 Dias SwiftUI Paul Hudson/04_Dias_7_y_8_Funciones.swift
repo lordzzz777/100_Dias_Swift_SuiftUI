@@ -1,25 +1,6 @@
 import Foundation
 
 
-// MARK: - Funciones Dias 7 y 8
-
-/// Hemos cubierto mucho sobre las funciones en los capítulos anteriores, así que recapitulemos:
-
-/// Las funciones nos permiten reutilizar el código fácilmente tallando trozos de código y dándole un nombre.
-
-/// Todas las funciones comienzan con la palabra func, seguida del nombre de la función. El cuerpo de la función está contenido dentro de las llaves de apertura y cierre.
-
-/// Podemos agregar parámetros para que nuestras funciones sean más flexibles: enumerarlos uno por uno separados por comas: el nombre del parámetro, luego los dos puntos y luego el tipo del parámetro.
-
-/// Puede controlar cómo se utilizan esos nombres de parámetros externamente, ya sea utilizando un nombre de parámetro externo personalizado o usando un guión bajo para desactivar el nombre externo de ese parámetro.
-
-/// Si crees que hay ciertos valores de parámetros que usarás repetidamente, puedes hacer que tengan un valor predeterminado para que tu función tome menos código para escribir y haga lo inteligente de forma predeterminada.
-
-/// Las funciones pueden devolver un valor si lo desea, pero si desea devolver varios datos de una función, debe usar una tupla. Estos contienen varios elementos con nombre, pero está limitado de una manera en que un diccionario no lo es: enumeras cada elemento específicamente, junto con su tipo.
-
-/// Las funciones pueden lanzar errores: crea una enumeración que define los errores que desea que ocurran, arroja esos errores dentro de la función según sea necesario, luego usa do, try y catch para manejarlos en el sitio de la llamada.
-
-
 // Función sin parámetros ni valor de retorno:
 func saludar() {
     print("¡Hola!")
@@ -87,6 +68,7 @@ do {
 
 
 // MARK: - Reto 4
+
 /// El desafío es el siguiente: escribe una función que acepte un entero del 1 al 10,000, y devuelva la raíz cuadrada entera de ese número. Suena fácil, pero hay algunas cosas que tener en cuenta:
 
 /// No puedes usar la función sqrt() u otras similares incorporadas de Swift, necesitas encontrar la raíz cuadrada por ti mismo.
