@@ -26,5 +26,6 @@
 - Reto nº 8
 ## Dia 14, Opcionales
 - Reto nº 9
-## Dia 15, Consolidación (1º parte)
-- Resumen de las 14 días pasados, (la 1º parte comienza con las variables y constantes, y termina en los enum)
+## Dia 15, Consolidación 
+- Resumen de las 14 días pasados, (la 1º parte)
+- Resumen de las 14 días pasados, (la 2º parte)
