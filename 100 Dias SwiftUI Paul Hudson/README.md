@@ -29,3 +29,4 @@
 ## Dia 15, Consolidación 
 - Resumen de las 14 días pasados, (la 1º parte)
 - Resumen de las 14 días pasados, (la 2º parte)
+- Resumen de las 14 días pasados, (la 3º parte)
