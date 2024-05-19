@@ -11,9 +11,12 @@ struct ExampleView: View {
     
     
     let studensList = ["Paco", "Manolo", "Perico", "Jaime", "Antonio"]
-    @State private var selectedStuden = "Paco"
-    @State private var tapCount = 0
+    
     @State private var name = ""
+    @State private var tapCount = 0
+    @State private var selectedStuden = "Paco"
+
+  
     var body: some View {
         NavigationStack{
             Form {
@@ -37,18 +40,22 @@ struct ExampleView: View {
                         Text("Row \(number)")
                     }
                 }
+                Section{
+                // sintaxis abreviada
+                ForEach(0..<5){
+                    Text("Row \($0)")
+                }
+            }
                 
                 Section {
-                    // sintaxis abreviada
+                    
                     Picker("Seleccione estudiante", selection: $selectedStuden){
-                        ForEach(studensList, id: \.self){
-                            Text($0)
+                        ForEach(studensList, id: \.self){                              Text($0)
                         }
                     }
-                    ForEach(0..<5){
-                        Text("Row \($0)")
-                    }
+                   
                 }
+                  
                 
             }
             .navigationTitle("SwiftUI") // Fuente grande por defecto
