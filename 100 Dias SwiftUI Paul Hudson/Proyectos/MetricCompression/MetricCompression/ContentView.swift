@@ -30,7 +30,7 @@ struct ContentView: View {
     /// variable que guarde la unidad de salida
     @State private var outputUniti = ""
     
-    /// Matriz que de cadena de texto, que representa las unidades de distancias
+    /// Matriz de cadena de texto, que representa las unidades de distancias
     let units = ["Metros", "Kilometros", "Pies", "Yardas", "Millas"]
     
     /// Diccionario,  la clave en cadena de texto, y el valor decimal
