@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @State private var punctuation = 0
     @State private var showingScore = false
+    @State private var isAlertInfo = false
+    @State private var messageInfo = ""
     @State private var scoreTitle = ""
+    @State private var questionNumber = 0
     
    @State private var countries = [
     "Estonia", "Francia", "Germany", "Ireland", "Ilaly", "Nigeria", "Polonia", "España", "Rusia", "UKrania", "US"
@@ -19,10 +22,8 @@ struct ContentView: View {
     @State private var correctaAnswer = Int.random(in: 0...2)
     
     var body: some View {
+        
         ZStack{
-//            LinearGradient(colors: [.blue, .black ], startPoint: .top, endPoint: .bottom)
-//                .ignoresSafeArea()
-            
             RadialGradient(stops:[
                 .init(color: .blue, location: 0.3),
                 .init(color: .red, location: 0.3)
@@ -30,6 +31,19 @@ struct ContentView: View {
             .ignoresSafeArea()
             
             VStack(spacing: 15) {
+                HStack{
+                    Button(action: {
+                        resetGame()
+                    }, label: {
+                        Text("reinicio").bold()
+                            .padding(3)
+                    }) .buttonStyle(.borderedProminent)
+                        .tint(.red)
+                    Spacer()
+                    Text("Puntuació: \(punctuation)")
+                        .font(.title2.weight(.bold))
+                        .foregroundStyle(.cyan)
+                }.padding()
                 Text("Toca la bandera de")
                     .font(.subheadline.weight(.heavy))
                     .foregroundStyle(.white)
@@ -49,32 +63,58 @@ struct ContentView: View {
                     
                 }
                 .alert(scoreTitle, isPresented: $showingScore){
+                    if questionNumber < 8 {
+                        Button("Continue", action: askQuestion)
+                    } else {
+                        Button("Continue", action: resetGame)
+                    }
+                } message: {
+                    Text("¿Tu puntuación es? \(punctuation)")
+                    
+                }
+                
+                .alert("" ,isPresented: $isAlertInfo){
                     Button("Continue", action: askQuestion)
                 } message: {
-                    Text("¿Tu puntuación es?")
+                    Text(messageInfo)
                 }
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 20)
             .background(.regularMaterial)
             .clipShape(.rect(cornerRadius: 20))
-          
+            .padding(4)
         }
     
     }
     
     func flagTapped(_ number: Int) {
         if number == correctaAnswer {
-            scoreTitle = "Correct"
+            scoreTitle = "Correcto"
+            punctuation += 10
         }else {
-            scoreTitle = "Wrong"
+            scoreTitle = "Incorrecto"
+            punctuation -= 5
+            messageInfo = "Esa es la bandera de \(countries[correctaAnswer])"
+            isAlertInfo = true
         }
         showingScore = true
+        questionNumber += 1
     }
     
    func askQuestion(){
-        countries.shuffle()
-        correctaAnswer = Int.random(in: 0...2)
+       if questionNumber < 8 {
+           countries.shuffle()
+           correctaAnswer = Int.random(in: 0...2)
+       }else {
+           resetGame()
+       }
+    }
+    
+    func resetGame(){
+        questionNumber = 0
+        punctuation = 0
+        askQuestion()
     }
 }
 
