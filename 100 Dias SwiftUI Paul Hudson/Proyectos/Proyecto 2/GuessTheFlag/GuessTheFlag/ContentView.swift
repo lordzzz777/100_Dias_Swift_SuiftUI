@@ -14,7 +14,7 @@ struct ContentView: View {
     @State private var messageInfo = ""
     @State private var scoreTitle = ""
     @State private var questionNumber = 0
-    
+  
    @State private var countries = [
     "Estonia", "Francia", "Germany", "Ireland", "Ilaly", "Nigeria", "Polonia", "España", "Rusia", "UKrania", "US"
     ]
@@ -47,7 +47,7 @@ struct ContentView: View {
                 Text("Toca la bandera de")
                     .font(.subheadline.weight(.heavy))
                     .foregroundStyle(.white)
-                
+              
                 Text(countries[correctaAnswer])
                     .font(.largeTitle.weight(.semibold))
                     .foregroundStyle(.white)
@@ -56,9 +56,10 @@ struct ContentView: View {
                     Button{
                         flagTapped(number)
                     } label: {
-                        Image(countries[number])
-                            .clipShape(.capsule)
-                            .shadow(radius: 5)
+/* reemplace la vista de imagen utilizada para las banderas con una nueva vista FlagImage() que muestre una imagen de bandera utilizando el conjunto específico de modificadores que teníamos.
+    "Image(countries[number]).clipShape(.capsule).shadow(radius: 5)"
+*/
+                        FlagImage(countries: countries, number: number)
                     }
                     
                 }

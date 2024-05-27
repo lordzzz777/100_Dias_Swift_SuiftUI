@@ -77,6 +77,8 @@ struct ContentView: View {
                 ///l Cantidad por persona, ( jercicio 1 check)
                 Section("Amount per person") {
                     Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "€"))
+                    /// Se le añade un condicional ternario, que si el usuario elige o%, los numero se tiñen de rojo
+                        .foregroundStyle(tipPercentage == 0 ? .red : .black)
                 }
                 
                 /// La cantidad total del cheque, ( jercicio 2 check)
