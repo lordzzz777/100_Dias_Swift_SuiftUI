@@ -1,6 +1,6 @@
 # Desafío:
 
-## Realizar Juejo de Piedra papel o tijeras
+## Realizar Juejo de Piedra, papel y tijeras
 ![cover1](https://github.com/lordzzz777/200_Dias_Swift_SuiftUI/assets/114311106/f18cee08-c49d-417a-a5c3-4230dc9d6123)
 ### **Indicaciones:**
 
