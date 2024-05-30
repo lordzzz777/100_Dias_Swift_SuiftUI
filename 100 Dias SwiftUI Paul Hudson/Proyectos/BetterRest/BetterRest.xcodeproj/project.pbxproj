@@ -11,7 +11,8 @@
 		6E600CA02C075EAC002408CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E600C9F2C075EAC002408CE /* ContentView.swift */; };
 		6E600CA22C075EAF002408CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E600CA12C075EAF002408CE /* Assets.xcassets */; };
 		6E600CA52C075EAF002408CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E600CA42C075EAF002408CE /* Preview Assets.xcassets */; };
-		6E600CAC2C075FBE002408CE /* BetterRestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E600CAB2C075FBE002408CE /* BetterRestView.swift */; };
+		6E600CAC2C075FBE002408CE /* BetterRestTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E600CAB2C075FBE002408CE /* BetterRestTutorialView.swift */; };
+		6E600CD82C086DD6002408CE /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6E600CD72C086DD6002408CE /* SleepCalculator.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +21,8 @@
 		6E600C9F2C075EAC002408CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6E600CA12C075EAF002408CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E600CA42C075EAF002408CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		6E600CAB2C075FBE002408CE /* BetterRestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterRestView.swift; sourceTree = "<group>"; };
+		6E600CAB2C075FBE002408CE /* BetterRestTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterRestTutorialView.swift; sourceTree = "<group>"; };
+		6E600CD72C086DD6002408CE /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +55,12 @@
 		6E600C9C2C075EAC002408CE /* BetterRest */ = {
 			isa = PBXGroup;
 			children = (
+				6E600CD22C08639A002408CE /* ViewTutorial */,
 				6E600C9D2C075EAC002408CE /* BetterRestApp.swift */,
 				6E600C9F2C075EAC002408CE /* ContentView.swift */,
+				6E600CD72C086DD6002408CE /* SleepCalculator.mlmodel */,
 				6E600CA12C075EAF002408CE /* Assets.xcassets */,
 				6E600CA32C075EAF002408CE /* Preview Content */,
-				6E600CAB2C075FBE002408CE /* BetterRestView.swift */,
 			);
 			path = BetterRest;
 			sourceTree = "<group>";
@@ -68,6 +71,14 @@
 				6E600CA42C075EAF002408CE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6E600CD22C08639A002408CE /* ViewTutorial */ = {
+			isa = PBXGroup;
+			children = (
+				6E600CAB2C075FBE002408CE /* BetterRestTutorialView.swift */,
+			);
+			path = ViewTutorial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,9 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E600CD82C086DD6002408CE /* SleepCalculator.mlmodel in Sources */,
 				6E600CA02C075EAC002408CE /* ContentView.swift in Sources */,
 				6E600C9E2C075EAC002408CE /* BetterRestApp.swift in Sources */,
-				6E600CAC2C075FBE002408CE /* BetterRestView.swift in Sources */,
+				6E600CAC2C075FBE002408CE /* BetterRestTutorialView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
