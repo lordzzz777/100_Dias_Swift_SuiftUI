@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Tutorial: View {
+    
     var body: some View {
         // coloca los elementos en vertical
         VStack(spacing: 30) {// lo que esta dentro delos parantesis indica el espacios entre elementos
