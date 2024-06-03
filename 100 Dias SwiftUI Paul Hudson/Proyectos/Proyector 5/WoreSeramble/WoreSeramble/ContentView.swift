@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
+    @State private var score = 0
     
     var body: some View {
         NavigationStack{
@@ -33,6 +34,17 @@ struct ContentView: View {
                 }
             }
             .navigationTitle(rootWord)
+            .toolbar{
+                ToolbarItem(placement: .navigation){
+                    Text("Score: \(score)").font(.title3).bold()
+                    
+                }
+                ToolbarItem(placement: .automatic){
+                    Button("Restart", action: {
+                        startGame()
+                    })
+                }
+            }
             .onSubmit(addNewWord)
             .onAppear(perform: startGame)
             .alert(errorTitle, isPresented: $showingError) { } message: {
@@ -67,6 +79,7 @@ struct ContentView: View {
         withAnimation {
             // Validación adicional por venir
             usedWords.insert(answer, at: 0)
+            score += newWord.count
         }
         newWord = ""
     }
@@ -81,6 +94,8 @@ struct ContentView: View {
 
                 // 4. Elija una palabra al azar o use "lombriz de la seda" como predeterminado sensato
                 rootWord = allWords.randomElement() ?? "silkworm"
+                newWord = ""
+                score = 0
 
                 // Si estamos aquí, todo ha funcionado, así que podemos salir
                 return
@@ -122,6 +137,7 @@ struct ContentView: View {
         errorMessage = message
         showingError = true
     }
+    
 }
 
 #Preview {
