@@ -14,6 +14,9 @@ struct ContentView: View {
     @State private var messageInfo = ""
     @State private var scoreTitle = ""
     @State private var questionNumber = 0
+    @State private var animationAmount = 0.0
+    @State private var animationAmount1 = 0.9
+    @State private var animationSize = 40
   
    @State private var countries = [
     "Estonia", "Francia", "Germany", "Ireland", "Ilaly", "Nigeria", "Polonia", "España", "Rusia", "UKrania", "US"
@@ -34,11 +37,14 @@ struct ContentView: View {
                 HStack{
                     Button(action: {
                         resetGame()
+                        animationAmount1 = 0.5
                     }, label: {
                         Text("reinicio").bold()
                             .padding(3)
                     }) .buttonStyle(.borderedProminent)
                         .tint(.red)
+                        .opacity(animationAmount1)
+                        .animation(.easeInOut, value: animationAmount1)
                     Spacer()
                     Text("Puntuació: \(punctuation)")
                         .font(.title2.weight(.bold))
@@ -54,13 +60,16 @@ struct ContentView: View {
                 
                 ForEach(0..<3) { number in
                     Button{
-                        flagTapped(number)
+                        withAnimation(.spring(duration: 1, bounce: 0.5)){
+                            flagTapped(number)
+                            animationAmount += 360
+                        }
                     } label: {
 /* reemplace la vista de imagen utilizada para las banderas con una nueva vista FlagImage() que muestre una imagen de bandera utilizando el conjunto específico de modificadores que teníamos.
     "Image(countries[number]).clipShape(.capsule).shadow(radius: 5)"
 */
-                        FlagImage(countries: countries, number: number)
-                    }
+                            FlagImage(countries: countries, number: number)
+                    }.rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
                     
                 }
                 .alert(scoreTitle, isPresented: $showingScore){
@@ -83,7 +92,7 @@ struct ContentView: View {
             .frame(maxWidth: .infinity)
             .padding(.vertical, 20)
             .background(.regularMaterial)
-            .clipShape(.rect(cornerRadius: 20))
+            .clipShape(.rect(cornerRadius: 15))
             .padding(4)
         }
     
@@ -98,6 +107,8 @@ struct ContentView: View {
             punctuation -= 5
             messageInfo = "Esa es la bandera de \(countries[correctaAnswer])"
             isAlertInfo = true
+            
+                
         }
         showingScore = true
         questionNumber += 1
@@ -116,6 +127,9 @@ struct ContentView: View {
         questionNumber = 0
         punctuation = 0
         askQuestion()
+        withAnimation(.spring(duration: 1, bounce: 0.5)){
+            animationAmount1 = 0.9
+        }
     }
 }
 
