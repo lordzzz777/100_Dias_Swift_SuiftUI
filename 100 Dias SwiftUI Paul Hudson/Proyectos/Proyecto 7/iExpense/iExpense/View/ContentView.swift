@@ -14,19 +14,25 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             List{
-                ForEach(expenses.items){ item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
-                        }
-                        
-                        Spacer()
-                        Text(item.amount, format: .currency(code: "€"))
+                Section(header: Text("Personal Expenses")){
+                    ForEach(expenses.items.filter{$0.type == "Personal"}){ item in
+                        ExpenseRow(item: item)
                     }
+                    .onDelete { offsets in
+                        removeItems(at: offsets, type: "Personal")
+                    }
+                    
                 }
-                .onDelete(perform: removeItems)
+                
+                Section(header: Text("Business Expenses")){
+                    ForEach(expenses.items.filter{$0.type == "Business"}){ item in
+                        ExpenseRow(item: item)
+                    }
+                    .onDelete { offsets in
+                        removeItems(at: offsets, type: "Business")
+                    }
+                    
+                }
             }
             .navigationTitle("iExpense")
             .toolbar{
@@ -43,6 +49,18 @@ struct ContentView: View {
     func removeItems(at offsets: IndexSet){
         expenses.items.remove(atOffsets: offsets)
     }
+    
+   /// Eliminar elementos de una lista de gastos específica (ya sea personal o comercial) basándose en sus índices
+    func removeItems(at offsets: IndexSet, type: String) {
+        let itemsToRemove = expenses.items.filter { $0.type == type }
+        for index in offsets {
+            if let itemIndex = expenses.items.firstIndex(where: { $0.id == itemsToRemove[index].id }) {
+                expenses.items.remove(at: itemIndex)
+            }
+        }
+    }
+    
+    
 }
 
 #Preview {
