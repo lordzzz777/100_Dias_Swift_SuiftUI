@@ -10,6 +10,7 @@ import SwiftUI
 struct Tutorial1: View {
     @State private var isImagenShow1 = false
     @State private var isImagenShow2 = false
+    
     var body: some View {
         NavigationStack{
 // llamas a la imagen con una cadena de texto: -> "Image("lanzadera")"
