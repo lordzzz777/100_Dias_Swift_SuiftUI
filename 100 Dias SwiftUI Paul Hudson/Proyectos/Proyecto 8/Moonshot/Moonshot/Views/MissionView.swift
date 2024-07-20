@@ -34,9 +34,15 @@ struct MissionView: View {
                         .foregroundStyle(.lightBackground)
                         .padding(.vertical)
                     
+                    //HStack {
                     Text("Mission Highlights")
                         .font(.title.bold())
+                    Text(mission.formattedLaunchDate) //Se añade la fecha de lanzamiento
+                        .font(.system(size: 15).bold())
+                        .foregroundStyle(.white.opacity(0.5))
                         .padding(.bottom,5)
+                        
+                //    }
                     Text(mission.description)
                     
                     Rectangle()

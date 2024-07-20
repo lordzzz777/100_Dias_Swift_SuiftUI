@@ -96,9 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				6ED18AC92C18C4ED0035567E /* MoonshotApp.swift */,
-				6EC4EEE62C4A6496008E71E2 /* Views */,
 				6ED18AD72C18C4F70035567E /* Tutorial */,
 				6EC4EEE32C4926B4008E71E2 /* Tools */,
+				6EC4EEE62C4A6496008E71E2 /* Views */,
 				6EF9ED252C1A1AB70030AF50 /* model */,
 				6ED18ACF2C18C4F00035567E /* Preview Content */,
 				6ED18ACD2C18C4F00035567E /* Assets.xcassets */,
