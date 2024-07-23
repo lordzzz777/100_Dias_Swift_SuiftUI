@@ -18,6 +18,8 @@
 		6E5094572C4E5D4E006DE995 /* Tutorial4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5094562C4E5D4E006DE995 /* Tutorial4.swift */; };
 		6E5094592C4E84D1006DE995 /* Tutorial5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5094582C4E84D1006DE995 /* Tutorial5.swift */; };
 		6E50945B2C4E8BB7006DE995 /* Tutorial6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50945A2C4E8BB7006DE995 /* Tutorial6.swift */; };
+		6EB616DD2C4FB8C0009AB210 /* Tutorial7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB616DC2C4FB8C0009AB210 /* Tutorial7.swift */; };
+		6EB616DF2C4FBFB4009AB210 /* Tutorial8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB616DE2C4FBFB4009AB210 /* Tutorial8.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		6E5094562C4E5D4E006DE995 /* Tutorial4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial4.swift; sourceTree = "<group>"; };
 		6E5094582C4E84D1006DE995 /* Tutorial5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial5.swift; sourceTree = "<group>"; };
 		6E50945A2C4E8BB7006DE995 /* Tutorial6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial6.swift; sourceTree = "<group>"; };
+		6EB616DC2C4FB8C0009AB210 /* Tutorial7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial7.swift; sourceTree = "<group>"; };
+		6EB616DE2C4FBFB4009AB210 /* Tutorial8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial8.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 				6E5094512C4E422E006DE995 /* Tutorial3.swift */,
 				6E5094582C4E84D1006DE995 /* Tutorial5.swift */,
 				6E50945A2C4E8BB7006DE995 /* Tutorial6.swift */,
+				6EB616DC2C4FB8C0009AB210 /* Tutorial7.swift */,
+				6EB616DE2C4FBFB4009AB210 /* Tutorial8.swift */,
 			);
 			path = Totorial;
 			sourceTree = "<group>";
@@ -180,7 +186,9 @@
 				6E50945B2C4E8BB7006DE995 /* Tutorial6.swift in Sources */,
 				6E5094592C4E84D1006DE995 /* Tutorial5.swift in Sources */,
 				6E5094502C4DBD4E006DE995 /* Tutorial2.swift in Sources */,
+				6EB616DF2C4FBFB4009AB210 /* Tutorial8.swift in Sources */,
 				6E5094412C4DB700006DE995 /* ContentView.swift in Sources */,
+				6EB616DD2C4FB8C0009AB210 /* Tutorial7.swift in Sources */,
 				6E50943F2C4DB700006DE995 /* NavigationApp.swift in Sources */,
 				6E50944E2C4DB789006DE995 /* Tutorial1.swift in Sources */,
 			);
