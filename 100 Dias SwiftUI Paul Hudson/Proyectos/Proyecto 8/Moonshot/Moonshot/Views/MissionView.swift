@@ -80,7 +80,12 @@ struct MissionView: View {
                                 }
                                 .padding(.horizontal)
                             }
+//                            NavigationLink("\(crewMember.astronaut.name)", value: crewMember.role)
                         }
+//                        .navigationDestination(for: String (crew.role)){ select in
+//                            AstronautView(astronaut: select.astronaut)
+//                        }
+
                     }
                 }
             }

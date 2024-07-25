@@ -21,7 +21,7 @@ struct ContentView: View {
                 if showingGrid {
                     ScrollView {
                         LazyVGrid(columns: columns) {
-                            ForEach(missions) { mission in
+                            ForEach(missions) { mission in 
                                 NavigationLink {
                                     MissionView(mission: mission, astronauts: astronauts)
                                 } label: {

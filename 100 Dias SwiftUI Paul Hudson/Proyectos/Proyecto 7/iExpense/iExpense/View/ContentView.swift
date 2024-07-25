@@ -13,6 +13,10 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack{
+NavigationLink("New Expense", destination: {
+    AddView(expenses: expenses)
+}).offset(x: -130).padding()
+               
             List{
                 Section(header: Text("Personal Expenses")){
                     ForEach(expenses.items.filter{$0.type == "Personal"}){ item in
