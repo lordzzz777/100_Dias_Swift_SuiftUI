@@ -13,10 +13,10 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack{
-NavigationLink("New Expense", destination: {
-    AddView(expenses: expenses)
-}).offset(x: -130).padding()
-               
+            NavigationLink("New Expense", destination: {
+                AddView(expenses: expenses)
+            }).offset(x: -130).padding()
+            
             List{
                 Section(header: Text("Personal Expenses")){
                     ForEach(expenses.items.filter{$0.type == "Personal"}){ item in
@@ -54,7 +54,7 @@ NavigationLink("New Expense", destination: {
         expenses.items.remove(atOffsets: offsets)
     }
     
-   /// Eliminar elementos de una lista de gastos específica (ya sea personal o comercial) basándose en sus índices
+    /// Eliminar elementos de una lista de gastos específica (ya sea personal o comercial) basándose en sus índices
     func removeItems(at offsets: IndexSet, type: String) {
         let itemsToRemove = expenses.items.filter { $0.type == type }
         for index in offsets {

@@ -11,7 +11,8 @@ struct Tutorial5: View {
     let layout = [
         GridItem(.adaptive(minimum: 80, maximum: 120)),
         GridItem(.adaptive(minimum: 80, maximum: 120)),
-        GridItem(.adaptive(minimum: 80, maximum: 120))
+        GridItem(.adaptive(minimum: 80, maximum: 120)),
+        
     ]
     
     var body: some View {
