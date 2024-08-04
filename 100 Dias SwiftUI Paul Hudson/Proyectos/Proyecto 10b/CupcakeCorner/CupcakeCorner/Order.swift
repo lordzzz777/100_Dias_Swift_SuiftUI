@@ -38,8 +38,10 @@ class Order: Codable {
     }
     
     var hasValidAddress: Bool {
-        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
+        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty  {
             return false
+        }else if name == " " || city == " " || zip == " " {
+            
         }
 
         return true
@@ -66,10 +68,61 @@ class Order: Codable {
     }
     var extraFrosting = false
     var addSprinkles = false
+
     
-   
-    var name = ""
-    var streetAddress = ""
-    var city = ""
-    var zip = ""
+    // Initializer
+    init() {
+        self.type = 0
+        self.quantity = 3
+        self.specialRequestEnabled = false
+        self.extraFrosting = false
+        self.addSprinkles = false
+        self.name = UserDefaults.standard.string(forKey: "name") ?? ""
+        self.streetAddress = UserDefaults.standard.string(forKey: "streetAddress") ?? ""
+        self.city = UserDefaults.standard.string(forKey: "city") ?? ""
+        self.zip = UserDefaults.standard.string(forKey: "zip") ?? ""
+            
+    }
+    var name: String {
+        didSet{
+            UserDefaults.standard.set(name, forKey: "name")
+        }
+    }
+    var streetAddress: String {
+        didSet{
+            UserDefaults.standard.set(streetAddress, forKey: "streetAddress")
+        }
+    }
+    var city: String {
+        didSet{
+            UserDefaults.standard.set(city, forKey: "city")
+        }
+    }
+    var zip: String {
+        didSet{
+            UserDefaults.standard.set(zip, forKey: "zip")
+        }
+    }
+    
+    func getSavedAddress() -> [String: String] {
+        return [
+            "Name": UserDefaults.standard.string(forKey: "name") ?? "",
+            "Street Address": UserDefaults.standard.string(forKey: "streetAddress") ?? "",
+            "City": UserDefaults.standard.string(forKey: "city") ?? "",
+            "Zip": UserDefaults.standard.string(forKey: "zip") ?? ""
+        ]
+    }
+    
+    func clearSavedAddress() {
+            UserDefaults.standard.removeObject(forKey: "name")
+            UserDefaults.standard.removeObject(forKey: "streetAddress")
+            UserDefaults.standard.removeObject(forKey: "city")
+            UserDefaults.standard.removeObject(forKey: "zip")
+            
+            // Update published properties
+            name = ""
+            streetAddress = ""
+            city = ""
+            zip = ""
+        }
 }

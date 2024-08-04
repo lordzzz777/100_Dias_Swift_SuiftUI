@@ -11,28 +11,38 @@ struct CheckoutView: View {
     var order: Order
     @State private var confirmationMessage = ""
     @State private var showingConfirmation = false
+    @State private var isShowErrror = false
     
     var body: some View {
         ScrollView {
             VStack {
-                AsyncImage(url: URL(string: "https://hws.dev/img/cupcakes@3x.jpg"), scale: 3) { image in
+                if isShowErrror{
+                    Image(systemName: "wifi.exclamationmark")
+                        .font(.system(size: 150))
+                        .offset(y: 90)
+                    Text("Connection Error!").font(.largeTitle).bold()
+                        .offset(y: 75)
+                }else {
+                    AsyncImage(url: URL(string: "https://hws.dev/img/cupcakes@3x.jpg"), scale: 3) { image in
                         image
                             .resizable()
                             .scaledToFit()
-                } placeholder: {
-                    ProgressView()
-                }
-                .frame(height: 233)
-
-                Text("Your total is \(order.cost, format: .currency(code: "USD"))")
-                    .font(.title)
-
-                Button("Place Order"){
-                    Task{
-                        await placeOrder()
+                    } placeholder: {
+                        ProgressView()
                     }
-                }
+                    .frame(height: 233)
+                    
+                    
+                    Text("Your total is \(order.cost, format: .currency(code: "USD"))")
+                        .font(.title)
+                    
+                    Button("Place Order"){
+                        Task{
+                            await placeOrder()
+                        }
+                    }
                     .padding()
+                }
             }
         }
         .navigationTitle("Check out")
@@ -40,6 +50,11 @@ struct CheckoutView: View {
             Button("OK") { }
         } message: {
             Text(confirmationMessage)
+        }
+        .alert("Error!", isPresented: $isShowErrror) {
+            Button("Ok"){}
+        } message: {
+            Text("You do not have an internet connection, or the server is not available, try again later, sorry for the inconvenience.").font(.title)
         }
         .navigationBarTitleDisplayMode(.inline)
         .scrollBounceBehavior(.basedOnSize)
@@ -64,6 +79,7 @@ struct CheckoutView: View {
 
         } catch {
             print("Checkout failed: \(error.localizedDescription)")
+            isShowErrror = true
         }
     }
 }
