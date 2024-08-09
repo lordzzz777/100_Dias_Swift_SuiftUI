@@ -16,7 +16,7 @@ struct ContentView: View {
     // Organizar por calificación
     // @Query(sort: \Book.rating, order: .reverse) var books: [Book]
     
-    // Ordenar pior calificación y titulo
+    // Ordenar por calificación y titulo
     // @Query(sort: [SortDescriptor(\Book.title)]) var books: [Book]
     
     // Al igual que el enfoque más simple de la clasificación, los resultados de clasificación usando SortDescriptor se realiza en orden ascendente de forma predeterminada, es decir, orden alfabético para el texto, pero si quisieras invertir el orden de clasificación, usarías esto en su lugar:
@@ -56,7 +56,8 @@ struct ContentView: View {
 
                             VStack(alignment: .leading) {
                                 Text(book.title)
-                                    .font(.headline)
+                                     .font(.headline)
+                                     .foregroundStyle(book.rating <= 2 ? .red : .black)
                                 Text(book.author)
                                     .foregroundStyle(.secondary)
                             }
