@@ -12,6 +12,7 @@
 		6E823E062C676D490063C8C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E823E052C676D490063C8C8 /* Assets.xcassets */; };
 		6E823E092C676D490063C8C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E823E082C676D490063C8C8 /* Preview Assets.xcassets */; };
 		6E823E102C676D5F0063C8C8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E823E0F2C676D5F0063C8C8 /* Model.swift */; };
+		6EEA4F152C693B4C00B6D482 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4F142C693B4C00B6D482 /* UsersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		6E823E052C676D490063C8C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E823E082C676D490063C8C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6E823E0F2C676D5F0063C8C8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		6EEA4F142C693B4C00B6D482 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				6E823E0F2C676D5F0063C8C8 /* Model.swift */,
+				6EEA4F142C693B4C00B6D482 /* UsersView.swift */,
 				6E823E012C676D470063C8C8 /* SwiftDataProjectTutoApp.swift */,
 				6E823E032C676D470063C8C8 /* ContentView.swift */,
 				6E823E052C676D490063C8C8 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 				6E823E102C676D5F0063C8C8 /* Model.swift in Sources */,
 				6E823E042C676D470063C8C8 /* ContentView.swift in Sources */,
 				6E823E022C676D470063C8C8 /* SwiftDataProjectTutoApp.swift in Sources */,
+				6EEA4F152C693B4C00B6D482 /* UsersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
