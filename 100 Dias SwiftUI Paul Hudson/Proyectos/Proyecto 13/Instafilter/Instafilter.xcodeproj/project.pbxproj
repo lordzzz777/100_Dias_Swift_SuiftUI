@@ -13,6 +13,9 @@
 		6E4461742C6F422400B18047 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E4461732C6F422400B18047 /* Preview Assets.xcassets */; };
 		6E44617C2C6F42EC00B18047 /* PropertyWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E44617B2C6F42EB00B18047 /* PropertyWrappers.swift */; };
 		6E44617E2C6F4B9200B18047 /* ConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E44617D2C6F4B9200B18047 /* ConfirmationDialog.swift */; };
+		6ECC992C2C70926F008F1CA4 /* IntegratingCoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC992B2C70926F008F1CA4 /* IntegratingCoreImage.swift */; };
+		6ECC992E2C709F4A008F1CA4 /* FilterCoreImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC992D2C709F4A008F1CA4 /* FilterCoreImage.swift */; };
+		6ECC99302C70AEE5008F1CA4 /* WithContentUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC992F2C70AEE5008F1CA4 /* WithContentUnavailableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		6E4461732C6F422400B18047 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6E44617B2C6F42EB00B18047 /* PropertyWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrappers.swift; sourceTree = "<group>"; };
 		6E44617D2C6F4B9200B18047 /* ConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialog.swift; sourceTree = "<group>"; };
+		6ECC992B2C70926F008F1CA4 /* IntegratingCoreImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegratingCoreImage.swift; sourceTree = "<group>"; };
+		6ECC992D2C709F4A008F1CA4 /* FilterCoreImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCoreImage.swift; sourceTree = "<group>"; };
+		6ECC992F2C70AEE5008F1CA4 /* WithContentUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithContentUnavailableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,9 @@
 			children = (
 				6E44617B2C6F42EB00B18047 /* PropertyWrappers.swift */,
 				6E44617D2C6F4B9200B18047 /* ConfirmationDialog.swift */,
+				6ECC992B2C70926F008F1CA4 /* IntegratingCoreImage.swift */,
+				6ECC992F2C70AEE5008F1CA4 /* WithContentUnavailableView.swift */,
+				6ECC992D2C709F4A008F1CA4 /* FilterCoreImage.swift */,
 			);
 			path = Tutoriales;
 			sourceTree = "<group>";
@@ -151,8 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ECC992E2C709F4A008F1CA4 /* FilterCoreImage.swift in Sources */,
 				6E44617E2C6F4B9200B18047 /* ConfirmationDialog.swift in Sources */,
 				6E44617C2C6F42EC00B18047 /* PropertyWrappers.swift in Sources */,
+				6ECC99302C70AEE5008F1CA4 /* WithContentUnavailableView.swift in Sources */,
+				6ECC992C2C70926F008F1CA4 /* IntegratingCoreImage.swift in Sources */,
 				6E44616F2C6F422100B18047 /* ContentView.swift in Sources */,
 				6E44616D2C6F422100B18047 /* InstafilterApp.swift in Sources */,
 			);
