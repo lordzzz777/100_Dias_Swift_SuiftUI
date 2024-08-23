@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack{
-            List(viewModel.user, id: \.id){ item in
+            List(viewModel.users, id: \.id){ item in
                 NavigationLink{ DetailView(usermodel: item)}
                 
             label: {

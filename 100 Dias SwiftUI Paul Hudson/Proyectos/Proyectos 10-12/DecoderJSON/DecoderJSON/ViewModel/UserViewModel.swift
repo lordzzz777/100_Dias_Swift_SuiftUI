@@ -21,7 +21,7 @@ final class UserViewModel{
     }
     
     private var userServer:  UserSever = UserSever()
-    var user: [User] = []
+    var users: [User] = []
     var friends: [Friend] = []
     
     init(){
@@ -33,8 +33,8 @@ final class UserViewModel{
     @MainActor
     func getUser() async {
         do{
-            user = try await userServer.getUser()
-            for user in try await userServer.getUser(){
+            users = try await userServer.getUser()
+            for user in users {
                 context.insert(user)
                
             }
