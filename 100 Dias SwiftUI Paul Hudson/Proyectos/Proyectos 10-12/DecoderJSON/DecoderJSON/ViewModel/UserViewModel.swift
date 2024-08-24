@@ -6,7 +6,7 @@
 //
 
 import Observation
-import SwiftUI
+//import SwiftUI
 import SwiftData
 
 @Observable
@@ -22,7 +22,7 @@ final class UserViewModel{
     
     private var userServer:  UserSever = UserSever()
     var users: [User] = []
-    var friends: [Friend] = []
+  //  var friends: [Friend] = []
     
     init(){
         Task{
@@ -38,7 +38,6 @@ final class UserViewModel{
                 context.insert(user)
                
             }
-            
             
         }catch{
             print("Ups ocurrio un error -> ", error.localizedDescription)

@@ -41,5 +41,5 @@ struct TutoPaul: View {
 
 #Preview {
     TutoPaul()
-        .modelContainer(for: User.self)
+        .modelContainer(for: User.self  )
 }

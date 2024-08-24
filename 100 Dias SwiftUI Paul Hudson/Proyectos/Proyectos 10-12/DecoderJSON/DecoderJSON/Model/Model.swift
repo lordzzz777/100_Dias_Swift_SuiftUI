@@ -45,7 +45,7 @@ class User: Codable, Identifiable {
     var about: String
     var registered: Date
     var tags: [String]
-    var friends: [Friend]
+    @Relationship(deleteRule: .cascade) var friends: [Friend]
     
     init(id: String = "" ,
          isActive: Bool = false,
