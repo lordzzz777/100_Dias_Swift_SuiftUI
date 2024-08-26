@@ -47,6 +47,6 @@ struct UsersView: View {
 }
 
 #Preview {
-    UsersView(minimumJoinDate: Date(), sortOrder:  [SortDescriptor(\User.name)])
+    UsersView(minimumJoinDate: Date(), sortOrder:   [SortDescriptor(\User.name)])
         .modelContainer(for: User.self)
 }
