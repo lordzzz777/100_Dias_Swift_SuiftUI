@@ -17,47 +17,50 @@ struct ContentView: View {
         )
     )
     
-    @State private var locations = [Location]()
-    @State private var selectedPlace: Location?
+    @State private var viewModel = ViewModel()
     
     var body: some View {
-        VStack {
-            MapReader { proxy in
-
-                Map(initialPosition: startPosition){
-                    ForEach(locations){ location in
-                        // Crea marca de puntuacón personalizada
-                        Annotation(location.name, coordinate: location.coordinate) {
-                            Image( "LocationRaul")
-                                .resizable()
-                                .foregroundStyle(.red)
-                                .frame(width: 60, height: 50)
-                                .background(.white)
-                                .clipShape(.circle)
-                                .onLongPressGesture {
-                                    selectedPlace = location
-                                }
-                        }
-                    }
-                }
-                // Al pulsar en el mapa almacena cordenadas
-                    .onTapGesture { position in
-                        
-                        if let coordinate = proxy.convert(position, from: .local) {
-                            let newLocation = Location(id: UUID(), name: "New location", description: "", latitude: coordinate.latitude, longitude: coordinate.longitude)
-                            locations.append(newLocation)
-                        }
-                    }
-                
-                // Ventana model
-                    .sheet(item: $selectedPlace) { place in
-                        EditView(location: place) { newLocation in
-                            if let index = locations.firstIndex(of: place) {
-                                locations[index] = newLocation
+        if viewModel.isUnlocked {
+            VStack {
+                MapReader { proxy in
+                    
+                    Map(initialPosition: startPosition){
+                        ForEach(viewModel.locations){ location in
+                            // Crea marca de puntuacón personalizada
+                            Annotation(location.name, coordinate: location.coordinate) {
+                                Image(systemName:  "scope")
+                                    .resizable()
+                                    .foregroundStyle(.red)
+                                    .frame(width: 60, height: 50)
+                                    .background(.white)
+                                    .clipShape(.circle)
+                                    .onLongPressGesture {
+                                        viewModel.selectedPlace = location
+                                    }
                             }
                         }
                     }
+                    // Al pulsar en el mapa almacena cordenadas
+                    .onTapGesture { position in
+                        if let coordinate = proxy.convert(position, from: .local) {
+                            viewModel.addLocation(at: coordinate)
+                        }
+                    }
+                    
+                    // Ventana model
+                    .sheet(item: $viewModel.selectedPlace) { place in
+                        EditView(location: place) {
+                            viewModel.update(location: $0)
+                        }
+                    }
+                }
             }
+        }else {
+            Button("Unlock Places", action: viewModel.authenticate)
+                .padding()
+                .background(.blue)
+                .foregroundStyle(.white)
+                .clipShape(.capsule)
         }
         
     }
