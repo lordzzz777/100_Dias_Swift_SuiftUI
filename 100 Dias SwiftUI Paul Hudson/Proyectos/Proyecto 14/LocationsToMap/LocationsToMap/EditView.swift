@@ -59,15 +59,25 @@ struct EditView: View {
             }
             .navigationTitle("Place details")
             .toolbar {
-                Button("Save") {
-                    var newLocation = location
-                    newLocation.id = UUID()
-                    newLocation.name = name
-                    newLocation.description = description
+                ToolbarItem(placement: .automatic, content: {
+                    Button("Save") {
+                        var newLocation = location
+                        newLocation.id = UUID()
+                        newLocation.name = name
+                        newLocation.description = description
 
-                    onSave(newLocation)
-                    dismiss()
-                }
+                        onSave(newLocation)
+                        dismiss()
+                    }
+                })
+                
+                ToolbarItem(placement: .navigation, content: {
+                    Button("Cancelar"){
+                        dismiss()
+                    }.foregroundStyle(.red)
+                })
+
+                
             }
             .task {
                 await fetchNearbyPlaces()
