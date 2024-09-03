@@ -1,4 +1,4 @@
-![Rieami200Swift2](https://github.com/lordzzz777/200_Dias_Swift_SuiftUI/assets/114311106/88dfb55e-5080-4d53-b458-6dfb1e9881cc)
+![ReadmeSwiftAndSwigtUI](https://github.com/user-attachments/assets/24718655-402e-4ec3-8431-be1e56d81ee2)
 
 # Desafío de 200 días con Swift/SwiftUI
 
