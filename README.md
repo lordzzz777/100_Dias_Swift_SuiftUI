@@ -1,6 +1,6 @@
 ![ReadmeSwiftAndSwigtUI](https://github.com/user-attachments/assets/24718655-402e-4ec3-8431-be1e56d81ee2)
 
-# Desafío de 200 días con Swift/SwiftUI
+# Desafío de 100 días con Swift/SwiftUI
 
 ¡Bienvenido a mi desafío de 200 días con Swift/SwiftUI! Este repositorio documenta mi viaje mientras me sumerjo en el mundo de la programación en Swift y SwiftUI. Mi objetivo es mejorar mis habilidades de desarrollo de aplicaciones iOS y crear proyectos cada vez más complejos a lo largo de estos 200 días.
 
