@@ -22,6 +22,8 @@ struct ContentView: View {
     "Estonia", "Francia", "Germany", "Ireland", "Ilaly", "Nigeria", "Polonia", "España", "Rusia", "UKrania", "US"
     ]
     
+
+    
     @State private var correctaAnswer = Int.random(in: 0...2)
     
     var body: some View {
