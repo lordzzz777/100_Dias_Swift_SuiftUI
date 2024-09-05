@@ -31,6 +31,8 @@ struct ContentView: View {
                                             .scaledToFit()
                                             .frame(width: 100, height: 100)
                                             .padding()
+                                            .accessibilityLabel("Imagen de la misión \(mission.displayName)")
+
                                         
                                         VStack {
                                             Text(mission.displayName)
@@ -43,6 +45,8 @@ struct ContentView: View {
                                         .padding(.vertical)
                                         .frame(maxWidth: .infinity)
                                         .background(.lightBackground)
+                                        .accessibilityLabel("\(mission.displayName), \(mission.formattedLaunchDate)")
+
                                     }
                                     .clipShape(.rect(cornerRadius: 10))
                                     .overlay(
@@ -65,6 +69,8 @@ struct ContentView: View {
                                     .scaledToFit()
                                     .frame(width: 100, height: 100)
                                     .padding()
+                                    .accessibilityLabel("Imagen de la misión \(mission.displayName)")
+
                                 
                                 VStack {
                                     Text(mission.displayName)
@@ -77,6 +83,8 @@ struct ContentView: View {
                                 .padding(.vertical, 50)
                                 .frame(maxWidth: .infinity)
                                 .background(.lightBackground)
+                                .accessibilityLabel("\(mission.displayName), \(mission.formattedLaunchDate)")
+
                             }
                             .clipShape(.rect(cornerRadius: 10))
                             .overlay(
@@ -102,6 +110,8 @@ struct ContentView: View {
                         withAnimation(.easeIn(duration: 0.6), {
                             Image(systemName: showingGrid ? "square.split.2x2.fill" : "list.bullet" )
                                 .foregroundStyle(.white.opacity(0.5))
+                                .accessibilityLabel(showingGrid ? "Mostrar en lista" : "Mostrar en cuadrícula")
+                                .accessibilityHint("Alterna entre vista en cuadrícula y lista")
                         })
                     })
                 })

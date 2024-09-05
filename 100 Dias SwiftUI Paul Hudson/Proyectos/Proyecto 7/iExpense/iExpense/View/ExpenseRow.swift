@@ -15,7 +15,7 @@ struct ExpenseRow: View {
                 Text(item.name)
                     .font(.headline)
                 Text(item.type)
-            }
+            } 
             
             Spacer()
             Text(item.amount, format: .currency(code: "EUR"))

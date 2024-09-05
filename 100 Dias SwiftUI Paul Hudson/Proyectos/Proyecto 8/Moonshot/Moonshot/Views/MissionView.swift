@@ -26,6 +26,7 @@ struct MissionView: View {
                     .containerRelativeFrame(.horizontal) { width, axos in
                         width * 0.6
                     }
+                    .accessibilityLabel("Imagen de la misión \(mission.displayName)")
 
                 
                 VStack(alignment: .leading){
@@ -33,10 +34,12 @@ struct MissionView: View {
                         .frame(height: 2)
                         .foregroundStyle(.lightBackground)
                         .padding(.vertical)
+                        .accessibilityHidden(true)
                     
                     //HStack {
                     Text("Mission Highlights")
                         .font(.title.bold())
+                        .accessibilityAddTraits(.isHeader)
                     Text(mission.formattedLaunchDate) //Se añade la fecha de lanzamiento
                         .font(.system(size: 15).bold())
                         .foregroundStyle(.white.opacity(0.5))
@@ -44,14 +47,17 @@ struct MissionView: View {
                         
                 //    }
                     Text(mission.description)
+                        .accessibilitySortPriority(1)
                     
                     Rectangle()
                         .frame(height: 2)
                         .foregroundStyle(.lightBackground)
                         .padding(.vertical)
+                        .accessibilityHidden(true)
                     Text("Crew")
                         .font(.title.bold())
                         .padding(.bottom, 5)
+                        .accessibilitySortPriority(0)
                 }
                 .padding(.horizontal)
                 
@@ -70,16 +76,20 @@ struct MissionView: View {
                                             Capsule()
                                                 .strokeBorder(.white, lineWidth: 1)
                                         )
+                                        .accessibilityLabel("Foto del astronauta \(crewMember.astronaut.name)")
                                     VStack(alignment: .leading) {
                                         Text(crewMember.astronaut.name)
                                             .foregroundStyle(.white)
                                             .font(.headline)
+                                            .accessibilityLabel("Nombre del astronauta: \(crewMember.astronaut.name)")
                                         Text(crewMember.role)
                                             .foregroundStyle(.white.opacity(0.5))
+                                            .accessibilityLabel("Rol: \(crewMember.role)")
                                     }
                                 }
                                 .padding(.horizontal)
                             }
+                            .accessibilityLabel("Ver detalles del astronauta \(crewMember.astronaut.name)")
 //                            NavigationLink("\(crewMember.astronaut.name)", value: crewMember.role)
                         }
 //                        .navigationDestination(for: String (crew.role)){ select in

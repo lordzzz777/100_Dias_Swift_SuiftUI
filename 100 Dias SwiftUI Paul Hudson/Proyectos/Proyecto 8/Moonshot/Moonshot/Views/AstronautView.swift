@@ -16,13 +16,16 @@ struct AstronautView: View {
                 Image(astronaut.id)
                     .resizable()
                     .scaledToFit()
+                    .accessibilityLabel(astronaut.name)
                 Text(astronaut.description)
                     .padding()
+                    .accessibilityLabel("Descripción del astronauta: \(astronaut.description)")
             }
         }
         .background(.darkBackground)
         .navigationTitle(astronaut.name)
         .navigationBarTitleDisplayMode(.inline)
+        .accessibilityElement(children: .contain)
     }
 }
 

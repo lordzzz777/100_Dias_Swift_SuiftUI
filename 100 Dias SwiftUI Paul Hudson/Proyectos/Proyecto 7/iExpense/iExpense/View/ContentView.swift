@@ -21,6 +21,10 @@ struct ContentView: View {
                 Section(header: Text("Personal Expenses")){
                     ForEach(expenses.items.filter{$0.type == "Personal"}){ item in
                         ExpenseRow(item: item)
+                            .accessibilityElement()
+                            .accessibilityLabel("\(item.name), $\(item.amount, specifier: "%.2f")")
+                            .accessibilityHint("Personal expense")
+                        
                     }
                     .onDelete { offsets in
                         removeItems(at: offsets, type: "Personal")
@@ -31,6 +35,9 @@ struct ContentView: View {
                 Section(header: Text("Business Expenses")){
                     ForEach(expenses.items.filter{$0.type == "Business"}){ item in
                         ExpenseRow(item: item)
+                            .accessibilityElement()
+                            .accessibilityLabel("\(item.name), $\(item.amount, specifier: "%.2f")")
+                            .accessibilityHint("Personal expense")
                     }
                     .onDelete { offsets in
                         removeItems(at: offsets, type: "Business")
