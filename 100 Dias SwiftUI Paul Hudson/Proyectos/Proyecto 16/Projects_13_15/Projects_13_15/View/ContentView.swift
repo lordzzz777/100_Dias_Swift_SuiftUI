@@ -8,9 +8,11 @@
 import SwiftUI
 import SwiftData
 
+
 struct ContentView: View {
     @Environment(\.modelContext) var context
     @Query(sort: \ModelData.title) var model: [ModelData]
+    
     @State private var isShowModal = false
   
     var body: some View {
@@ -55,10 +57,12 @@ struct ContentView: View {
             })
         }
     }
-    
+
     func removeItem(_ Item: ModelData){
         context.delete(Item)
     }
+    
+    
 }
 
 #Preview {

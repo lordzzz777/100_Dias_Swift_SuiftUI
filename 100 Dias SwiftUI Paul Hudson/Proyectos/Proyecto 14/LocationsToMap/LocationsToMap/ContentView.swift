@@ -39,9 +39,9 @@ struct ContentView: View {
                                             .frame(width: 60, height: 50)
                                             .background(.white)
                                             .clipShape(.circle)
-                                            .onLongPressGesture {
-                                                viewModel.selectedPlace = location
-                                            }
+//                                            .onLongPressGesture {
+//                                                viewModel.selectedPlace = location
+//                                            }
                                     }
                                 }
                             }.mapStyle(isMap ? .hybrid : .standard)

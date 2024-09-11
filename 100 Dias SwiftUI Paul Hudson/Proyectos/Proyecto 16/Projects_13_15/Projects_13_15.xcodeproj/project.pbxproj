@@ -14,6 +14,7 @@
 		6E6B6E332C8EDC9400F701E4 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6B6E322C8EDC9400F701E4 /* ModelData.swift */; };
 		6E6B6E362C8EDE7500F701E4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6B6E352C8EDE7500F701E4 /* DetailView.swift */; };
 		6E6B6E382C8EDE9A00F701E4 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6B6E372C8EDE9A00F701E4 /* AddPhotoView.swift */; };
+		6E6B6E3B2C9027F200F701E4 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6B6E3A2C9027F200F701E4 /* LocationFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		6E6B6E322C8EDC9400F701E4 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		6E6B6E352C8EDE7500F701E4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		6E6B6E372C8EDE9A00F701E4 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
+		6E6B6E3A2C9027F200F701E4 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				6E6B6E232C8EDC5900F701E4 /* Projects_13_15App.swift */,
+				6E6B6E392C9026BB00F701E4 /* ViewModel */,
 				6E6B6E342C8EDE4500F701E4 /* View */,
 				6E6B6E312C8EDC6F00F701E4 /* Moleodel */,
 				6E6B6E272C8EDC5C00F701E4 /* Assets.xcassets */,
@@ -90,6 +93,14 @@
 				6E6B6E372C8EDE9A00F701E4 /* AddPhotoView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6E6B6E392C9026BB00F701E4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6E6B6E3A2C9027F200F701E4 /* LocationFetcher.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +175,7 @@
 			files = (
 				6E6B6E262C8EDC5900F701E4 /* ContentView.swift in Sources */,
 				6E6B6E382C8EDE9A00F701E4 /* AddPhotoView.swift in Sources */,
+				6E6B6E3B2C9027F200F701E4 /* LocationFetcher.swift in Sources */,
 				6E6B6E362C8EDE7500F701E4 /* DetailView.swift in Sources */,
 				6E6B6E242C8EDC5900F701E4 /* Projects_13_15App.swift in Sources */,
 				6E6B6E332C8EDC9400F701E4 /* ModelData.swift in Sources */,
@@ -303,6 +315,7 @@
 				DEVELOPMENT_TEAM = W5HZTU6SV8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "La app necesita permiso para usar su uvicación";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -332,6 +345,7 @@
 				DEVELOPMENT_TEAM = W5HZTU6SV8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "La app necesita permiso para usar su uvicación";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
