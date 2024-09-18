@@ -23,6 +23,7 @@
 		6EB783C92C92D68C00BBA260 /* Tutorial3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB783C82C92D68C00BBA260 /* Tutorial3.swift */; };
 		6EB783CB2C92DD3100BBA260 /* Tutorial4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB783CA2C92DD3100BBA260 /* Tutorial4.swift */; };
 		6EB783CD2C92E05C00BBA260 /* Tutorial5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB783CC2C92E05C00BBA260 /* Tutorial5.swift */; };
+		6EF9BF252C9B615200C4AC18 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF9BF242C9B615200C4AC18 /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF9BF252C9B615200C4AC18 /* CodeScanner in Frameworks */,
 				6E757DF02C983F9500D5408D /* SamplePackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +130,7 @@
 			name = HotProspects;
 			packageProductDependencies = (
 				6E757DEF2C983F9500D5408D /* SamplePackage */,
+				6EF9BF242C9B615200C4AC18 /* CodeScanner */,
 			);
 			productName = HotProspects;
 			productReference = 6E6B6E452C91941A00F701E4 /* HotProspects.app */;
@@ -159,6 +162,7 @@
 			mainGroup = 6E6B6E3C2C91941A00F701E4;
 			packageReferences = (
 				6E757DEE2C983F9500D5408D /* XCRemoteSwiftPackageReference "SamplePackage" */,
+				6EF9BF232C9B615200C4AC18 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 6E6B6E462C91941A00F701E4 /* Products */;
 			projectDirPath = "";
@@ -335,6 +339,7 @@
 				DEVELOPMENT_TEAM = W5HZTU6SV8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Necesitamo permiso, para usar la camara y escanear códigos QR.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -364,6 +369,7 @@
 				DEVELOPMENT_TEAM = W5HZTU6SV8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Necesitamo permiso, para usar la camara y escanear códigos QR.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -414,6 +420,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		6EF9BF232C9B615200C4AC18 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -421,6 +435,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6E757DEE2C983F9500D5408D /* XCRemoteSwiftPackageReference "SamplePackage" */;
 			productName = SamplePackage;
+		};
+		6EF9BF242C9B615200C4AC18 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EF9BF232C9B615200C4AC18 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
