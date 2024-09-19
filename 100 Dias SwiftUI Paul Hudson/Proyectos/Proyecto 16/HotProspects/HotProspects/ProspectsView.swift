@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import CodeScanner
+import UserNotifications
 
 struct ProspectsView: View {
     @State private var isShowingScanner = false
@@ -30,27 +31,7 @@ struct ProspectsView: View {
         }
     }
     
-    func handleScan(result: Result<ScanResult, ScanError>) {
-        isShowingScanner = false
-        
-        switch result {
-        case .success(let result):
-            let details = result.string.components(separatedBy: "\n")
-            guard details.count == 2 else { return }
-
-            let person = Prospect(name: details[0], emailAddress: details[1], isContacted: false)
-
-            modelContext.insert(person)
-        case .failure(let error):
-            print("Scanning failed: \(error.localizedDescription)")
-        }
-    }
     
-    func delete() {
-        for prospect in selectedProspects {
-            modelContext.delete(prospect)
-        }
-    }
     
     @Query(sort: \Prospect.name) var prospects: [Prospect]
     @Environment(\.modelContext) var modelContext
@@ -91,7 +72,12 @@ struct ProspectsView: View {
                             prospect.isContacted.toggle()
                         }
                         .tint(.green)
+                        
                     }
+                    Button("Remind Me", systemImage: "bell") {
+                        addNotification(for: prospect)
+                    }
+                    .tint(.orange)
                 }
                 .tag(prospect)
             }
@@ -115,6 +101,60 @@ struct ProspectsView: View {
             }
             .sheet(isPresented: $isShowingScanner) {
                 CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: handleScan)
+            }
+        }
+    }
+    
+    func handleScan(result: Result<ScanResult, ScanError>) {
+        isShowingScanner = false
+        
+        switch result {
+        case .success(let result):
+            let details = result.string.components(separatedBy: "\n")
+            guard details.count == 2 else { return }
+            
+            let person = Prospect(name: details[0], emailAddress: details[1], isContacted: false)
+            
+            modelContext.insert(person)
+        case .failure(let error):
+            print("Scanning failed: \(error.localizedDescription)")
+        }
+    }
+    
+    func delete() {
+        for prospect in selectedProspects {
+            modelContext.delete(prospect)
+        }
+    }
+    
+    func addNotification(for prospect: Prospect) {
+        let center = UNUserNotificationCenter.current()
+
+        let addRequest = {
+            let content = UNMutableNotificationContent()
+            content.title = "Contact \(prospect.name)"
+            content.subtitle = prospect.emailAddress
+            content.sound = UNNotificationSound.default
+
+            var dateComponents = DateComponents()
+            dateComponents.hour = 9
+          //  let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            center.add(request)
+        }
+
+        center.getNotificationSettings { settings in
+            if settings.authorizationStatus == .authorized {
+                addRequest()
+            } else {
+                center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                    if success {
+                        addRequest()
+                    } else if let error {
+                        print(error.localizedDescription)
+                    }
+                }
             }
         }
     }
