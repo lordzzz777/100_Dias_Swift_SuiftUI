@@ -13,11 +13,13 @@ import UserNotifications
 struct ProspectsView: View {
     @State private var isShowingScanner = false
     @State private var selectedProspects = Set<Prospect>()
+    @State private var isPotential = false
     
     enum FilterType {
         case none, contacted, uncontacted
     }
     
+
     let filter: FilterType
     
     var title: String {
@@ -52,10 +54,18 @@ struct ProspectsView: View {
         NavigationStack {
             List(prospects, selection: $selectedProspects){ prospect in
                 VStack(alignment: .leading) {
-                    Text(prospect.name)
-                        .font(.headline)
-                    Text(prospect.emailAddress)
-                        .foregroundStyle(.secondary)
+                    NavigationLink(destination: EditView(model: prospect), label: {
+                        Text(prospect.name)
+                            .font(.headline)
+                        Text(prospect.emailAddress)
+                            .foregroundStyle(.secondary)
+                        if prospect.isContacted == true {
+                            Button("", systemImage: "star.fill", action: {
+                                isPotential.toggle()
+                            }).tint(prospect.isPotential ? .yellow : .gray)
+                        }
+                    })
+
                 }
                 .swipeActions {
                     Button("Delete", systemImage: "trash", role: .destructive) {
@@ -113,7 +123,7 @@ struct ProspectsView: View {
             let details = result.string.components(separatedBy: "\n")
             guard details.count == 2 else { return }
             
-            let person = Prospect(name: details[0], emailAddress: details[1], isContacted: false)
+            let person = Prospect(name: details[0], emailAddress: details[1], isContacted: false, isPotential: isPotential)
             
             modelContext.insert(person)
         case .failure(let error):

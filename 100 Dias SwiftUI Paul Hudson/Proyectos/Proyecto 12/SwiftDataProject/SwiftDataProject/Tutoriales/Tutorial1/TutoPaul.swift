@@ -9,7 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct TutoPaul: View {
-    @Environment (\.modelContext) var modelContex
+    @Environment(\.modelContext) var modelContex
     @Query(sort: \User.name) var users: [User]
     @State private var path = [User]()
 
