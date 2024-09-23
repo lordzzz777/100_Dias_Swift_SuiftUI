@@ -5,7 +5,7 @@
 //  Created by Esteban Perez Castillejo on 13/8/24.
 //
 
-import SwiftData
+//import SwiftData
 import SwiftUI
 
 @main
