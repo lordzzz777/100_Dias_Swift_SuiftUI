@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct Card {
+struct Card: Identifiable, Codable, Equatable {
+    var id = UUID() // Identificador único
     var prompt: String
     var answer: String
     
