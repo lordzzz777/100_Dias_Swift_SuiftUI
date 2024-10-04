@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		6ED6CC6A2CAF289C0029219B /* LayoutAndGeometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutAndGeometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ED6CC6A2CAF289C0029219B /* LayoutAndGeometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = LayoutAndGeometry.app; path = "/Users/estebanperezcastillejo/Desktop/Prolyectos Xcode/Repos/100_Dias_Swift_SuiftUI/100 Dias SwiftUI Paul Hudson/Proyectos/Proyecto 18/LayoutAndGeometry/build/Debug-iphoneos/LayoutAndGeometry.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,16 +33,7 @@
 			isa = PBXGroup;
 			children = (
 				6ED6CC6C2CAF289C0029219B /* LayoutAndGeometry */,
-				6ED6CC6B2CAF289C0029219B /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		6ED6CC6B2CAF289C0029219B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6ED6CC6A2CAF289C0029219B /* LayoutAndGeometry.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,7 +86,7 @@
 			mainGroup = 6ED6CC612CAF289C0029219B;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 6ED6CC6B2CAF289C0029219B /* Products */;
+			productRefGroup = 6ED6CC612CAF289C0029219B;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
