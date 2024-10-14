@@ -42,5 +42,7 @@ class Favorites {
 
     func save() {
         // write out our data
+        let array = Array(resorts)
+        UserDefaults.standard.set(array, forKey: key)
     }
 }

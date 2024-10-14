@@ -13,11 +13,28 @@ struct ContentView: View {
     
     let resorts: [Resort] = Bundle.main.decode("resorts.json")
     
+    @State private var sortOrder: SortOrder = .defaultOrder
+    
+    enum SortOrder {
+        case defaultOrder, alphabetical, country
+    }
+    
+    var sortedResorts: [Resort] {
+        switch sortOrder {
+        case .defaultOrder:
+            return resorts
+        case .alphabetical:
+            return resorts.sorted { $0.name < $1.name }
+        case .country:
+            return resorts.sorted { $0.country < $1.country }
+        }
+    }
+    
     var filteredResorts: [Resort] {
         if searchText.isEmpty {
-           resorts
+            return sortedResorts
         } else {
-            resorts.filter { $0.name.localizedStandardContains(searchText) }
+            return sortedResorts.filter { $0.name.localizedStandardContains(searchText) }
         }
     }
     
@@ -49,7 +66,7 @@ struct ContentView: View {
                     if favorites.contains(resort) {
                         Spacer()
                         Image(systemName: "heart.fill")
-                        .accessibilityLabel("This is a favorite resort")
+                            .accessibilityLabel("This is a favorite resort")
                             .foregroundStyle(.red)
                     }
                 }
@@ -59,6 +76,16 @@ struct ContentView: View {
                 ResortView(resort: resort)
             }
             .searchable(text: $searchText, prompt: "Search for a resort")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Picker("Sort Order", selection: $sortOrder) {
+                        Text("Default").tag(SortOrder.defaultOrder)
+                        Text("Alphabetical").tag(SortOrder.alphabetical)
+                        Text("Country").tag(SortOrder.country)
+                    }
+                    .pickerStyle(.segmented)
+                }
+            }
         } detail: {
             WelcomeView()
         }
